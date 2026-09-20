@@ -41,11 +41,9 @@ So people ask someone at a computer shop to fill the form for them — paying mo
 
 ## 🖼️ Screenshots
 
-> Add your own screenshots before sharing the repo — drop the images in `docs/` and they'll appear here:
->
-> | Asking a question | Progress checklist | Review screen |
-> |---|---|---|
-> | `docs/Screenshot start.png` | `docs/Screenshot Filling Info.png` | `docs/Screenshot Submitted form by Voice Control.png` |
+| Starting a form | Filling by voice | Submitted |
+|---|---|---|
+| ![Starting a form](docs/Screenshot%20start.png) | ![Filling by voice](docs/Screenshot%20Filling%20Info.png) | ![Submitted by voice](docs/Screenshot%20Submitted%20form%20by%20Voice%20Control.png) |
 
 ---
 
