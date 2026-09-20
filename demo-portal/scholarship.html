@@ -1,0 +1,330 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>National Merit Scholarship 2026 — Application</title>
+  <link rel="stylesheet" href="portal.css" />
+</head>
+<body>
+  <div class="demo-bar">Demo portal — use synthetic (made-up) information only. Nothing is sent anywhere.</div>
+  <header class="gov-head">
+    <div class="in">
+      <span class="seal"><i></i></span>
+      <div class="t"><strong>Shikkha Setu e-Service Portal</strong><span>শিক্ষা সেতু ই-সেবা পোর্টাল (Demo)</span></div>
+      <nav>
+        <a href="index.html">Home</a>
+        <a href="scholarship.html" aria-current="page">Scholarship</a>
+        <a href="course.html">Course registration</a>
+        <a href="service.html">Service request</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <h1 class="page-title">National Merit Scholarship 2026 — Application Form</h1>
+    <p class="page-sub">For students currently studying at HSC or undergraduate level in Bangladesh.</p>
+    <div class="notice" role="note">
+      Eligibility: SSC GPA 4.00 or above and yearly family income below Tk 6,00,000.
+      Keep ready: a passport-size photo, your SSC mark sheet (PDF or JPG) and your NID or birth registration number.
+      Fields marked * are required. All information must be written in English.
+    </div>
+
+    <div class="layout">
+      <ol class="stepper" aria-label="Application steps">
+        <li>Personal information</li>
+        <li>Address</li>
+        <li>Education</li>
+        <li>Family &amp; finance</li>
+        <li>Documents &amp; declaration</li>
+      </ol>
+
+      <form class="wizard" novalidate data-ref-prefix="NMS">
+        <!-- ===== Step 1 ===== -->
+        <section class="step" data-title="Personal information">
+          <h2>Step 1: Personal information</h2>
+          <p class="lead">Write your name exactly as it appears on your SSC certificate.</p>
+          <div class="form-alert" role="alert" hidden>Please correct the highlighted fields.</div>
+          <div class="grid">
+            <div class="field wide">
+              <label for="s-name" class="req">Full name (as in SSC certificate)</label>
+              <input type="text" id="s-name" name="full_name" required minlength="3" maxlength="80" autocomplete="name" aria-describedby="s-name-h s-name-e" pattern="[A-Za-z .\-']+" data-pattern-msg="Use English letters only." />
+              <p class="help" id="s-name-h">English letters only, e.g. Nusrat Jahan.</p>
+              <p class="error" id="s-name-e" role="alert" hidden></p>
+            </div>
+            <div class="field">
+              <label for="s-father" class="req">Father's name</label>
+              <input type="text" id="s-father" name="father_name" required pattern="[A-Za-z .\-']+" data-pattern-msg="Use English letters only." aria-describedby="s-father-e" />
+              <p class="error" id="s-father-e" role="alert" hidden></p>
+            </div>
+            <div class="field">
+              <label for="s-mother" class="req">Mother's name</label>
+              <input type="text" id="s-mother" name="mother_name" required pattern="[A-Za-z .\-']+" data-pattern-msg="Use English letters only." aria-describedby="s-mother-e" />
+              <p class="error" id="s-mother-e" role="alert" hidden></p>
+            </div>
+            <div class="field">
+              <label for="s-dob" class="req">Date of birth</label>
+              <input type="date" id="s-dob" name="dob" required min="1990-01-01" max="2013-12-31" aria-describedby="s-dob-e" />
+              <p class="error" id="s-dob-e" role="alert" hidden></p>
+            </div>
+            <fieldset class="field choice">
+              <legend class="req">Gender</legend>
+              <label><input type="radio" name="gender" value="Female" required /> Female</label>
+              <label><input type="radio" name="gender" value="Male" /> Male</label>
+              <label><input type="radio" name="gender" value="Other" /> Other</label>
+              <p class="error" role="alert" hidden></p>
+            </fieldset>
+            <div class="field">
+              <label for="s-nid" class="req">NID or Birth Registration number</label>
+              <input type="text" id="s-nid" name="nid" required inputmode="numeric" pattern="[0-9]{10}|[0-9]{13}|[0-9]{17}" data-pattern-msg="NID must be 10 or 13 digits; birth registration must be 17 digits." aria-describedby="s-nid-h s-nid-e" />
+              <p class="help" id="s-nid-h">10 or 13 digit NID, or 17 digit birth registration number.</p>
+              <p class="error" id="s-nid-e" role="alert" hidden></p>
+            </div>
+            <div class="field">
+              <label for="s-mobile" class="req">Mobile number</label>
+              <input type="tel" id="s-mobile" name="mobile" required pattern="01[3-9][0-9]{8}" data-pattern-msg="Enter an 11-digit Bangladeshi mobile number starting with 01." aria-describedby="s-mobile-h s-mobile-e" />
+              <p class="help" id="s-mobile-h">11 digits, e.g. 01712345678</p>
+              <p class="error" id="s-mobile-e" role="alert" hidden></p>
+            </div>
+            <div class="field wide">
+              <label for="s-email" class="req">Email address</label>
+              <input type="email" id="s-email" name="email" required aria-describedby="s-email-e" />
+              <p class="error" id="s-email-e" role="alert" hidden></p>
+            </div>
+          </div>
+          <div class="actions"><span></span><div class="right"><button type="button" class="btn primary" data-nav="next">Next</button></div></div>
+        </section>
+
+        <!-- ===== Step 2 ===== -->
+        <section class="step" data-title="Address" hidden>
+          <h2>Step 2: Address</h2>
+          <p class="lead">Your present address is used for sending letters about the scholarship.</p>
+          <div class="form-alert" role="alert" hidden>Please correct the highlighted fields.</div>
+          <h3>Present address</h3>
+          <div class="grid">
+            <div class="field">
+              <label for="s-division" class="req">Division</label>
+              <select id="s-division" name="division" required aria-describedby="s-division-e">
+                <option value="">— Select division —</option>
+                <option>Barishal</option><option>Chattogram</option><option>Dhaka</option><option>Khulna</option>
+                <option>Mymensingh</option><option>Rajshahi</option><option>Rangpur</option><option>Sylhet</option>
+              </select>
+              <p class="error" id="s-division-e" role="alert" hidden></p>
+            </div>
+            <div class="field">
+              <label for="s-district" class="req">District</label>
+              <input type="text" id="s-district" name="district" required aria-describedby="s-district-e" />
+              <p class="error" id="s-district-e" role="alert" hidden></p>
+            </div>
+            <div class="field">
+              <label for="s-upazila" class="req">Upazila / Thana</label>
+              <input type="text" id="s-upazila" name="upazila" required aria-describedby="s-upazila-e" />
+              <p class="error" id="s-upazila-e" role="alert" hidden></p>
+            </div>
+            <div class="field">
+              <label for="s-post" >Post code</label>
+              <input type="text" id="s-post" name="post_code" inputmode="numeric" pattern="[0-9]{4}" data-pattern-msg="Post code has 4 digits." aria-describedby="s-post-e" />
+              <p class="error" id="s-post-e" role="alert" hidden></p>
+            </div>
+            <div class="field wide">
+              <label for="s-addr" class="req">House, road, village / area</label>
+              <textarea id="s-addr" name="present_address" required minlength="8" aria-describedby="s-addr-e"></textarea>
+              <p class="error" id="s-addr-e" role="alert" hidden></p>
+            </div>
+          </div>
+          <h3>Permanent address</h3>
+          <div class="field">
+            <label class="check"><input type="checkbox" name="same_address" id="s-same" /> Permanent address is the same as present address</label>
+          </div>
+          <div class="field" data-hide-if-checked="same_address">
+            <label for="s-paddr" class="req">Permanent address</label>
+            <textarea id="s-paddr" name="permanent_address" required minlength="8" aria-describedby="s-paddr-e"></textarea>
+            <p class="error" id="s-paddr-e" role="alert" hidden></p>
+          </div>
+          <div class="actions"><button type="button" class="btn" data-nav="back">Back</button><div class="right"><button type="button" class="btn primary" data-nav="next">Next</button></div></div>
+        </section>
+
+        <!-- ===== Step 3 ===== -->
+        <section class="step" data-title="Education" hidden>
+          <h2>Step 3: Education</h2>
+          <p class="lead">Give the results exactly as printed on your mark sheets.</p>
+          <div class="form-alert" role="alert" hidden>Please correct the highlighted fields.</div>
+          <div class="grid">
+            <div class="field">
+              <label for="s-level" class="req">Current level of study</label>
+              <select id="s-level" name="study_level" required aria-describedby="s-level-e">
+                <option value="">— Select —</option>
+                <option>HSC 1st year</option><option>HSC 2nd year</option><option>Diploma</option>
+                <option>Undergraduate (Honours)</option><option>Undergraduate (Pass)</option>
+              </select>
+              <p class="error" id="s-level-e" role="alert" hidden></p>
+            </div>
+            <div class="field">
+              <label for="s-inst" class="req">Current institution name</label>
+              <input type="text" id="s-inst" name="institution" required aria-describedby="s-inst-e" />
+              <p class="error" id="s-inst-e" role="alert" hidden></p>
+            </div>
+          </div>
+          <h3>SSC / Dakhil result</h3>
+          <div class="grid">
+            <div class="field">
+              <label for="s-board" class="req">Education board</label>
+              <select id="s-board" name="ssc_board" required aria-describedby="s-board-e">
+                <option value="">— Select board —</option>
+                <option>Dhaka</option><option>Rajshahi</option><option>Cumilla</option><option>Jashore</option>
+                <option>Chattogram</option><option>Barishal</option><option>Sylhet</option><option>Dinajpur</option>
+                <option>Mymensingh</option><option>Madrasah</option><option>Technical</option>
+              </select>
+              <p class="error" id="s-board-e" role="alert" hidden></p>
+            </div>
+            <div class="field">
+              <label for="s-year" class="req">Passing year</label>
+              <input type="number" id="s-year" name="ssc_year" required min="2015" max="2025" aria-describedby="s-year-e" />
+              <p class="error" id="s-year-e" role="alert" hidden></p>
+            </div>
+            <div class="field">
+              <label for="s-roll" class="req">SSC roll number</label>
+              <input type="text" id="s-roll" name="ssc_roll" required inputmode="numeric" pattern="[0-9]{6}" data-pattern-msg="Roll number has 6 digits." aria-describedby="s-roll-e" />
+              <p class="error" id="s-roll-e" role="alert" hidden></p>
+            </div>
+            <div class="field">
+              <label for="s-gpa" class="req">SSC GPA (out of 5.00)</label>
+              <input type="number" id="s-gpa" name="ssc_gpa" required min="1" max="5" step="0.01" aria-describedby="s-gpa-h s-gpa-e" />
+              <p class="help" id="s-gpa-h">Minimum 4.00 to be eligible.</p>
+              <p class="error" id="s-gpa-e" role="alert" hidden></p>
+            </div>
+          </div>
+          <h3>Group</h3>
+          <fieldset class="field choice">
+            <legend class="req">SSC group</legend>
+            <label><input type="radio" name="ssc_group" value="Science" required /> Science</label>
+            <label><input type="radio" name="ssc_group" value="Business Studies" /> Business Studies</label>
+            <label><input type="radio" name="ssc_group" value="Humanities" /> Humanities</label>
+            <p class="error" role="alert" hidden></p>
+          </fieldset>
+          <div class="actions"><button type="button" class="btn" data-nav="back">Back</button><div class="right"><button type="button" class="btn primary" data-nav="next">Next</button></div></div>
+        </section>
+
+        <!-- ===== Step 4 ===== -->
+        <section class="step" data-title="Family & finance" hidden>
+          <h2>Step 4: Family &amp; finance</h2>
+          <p class="lead">This helps the committee understand financial need.</p>
+          <div class="form-alert" role="alert" hidden>Please correct the highlighted fields.</div>
+          <div class="grid">
+            <div class="field">
+              <label for="s-income" class="req">Yearly family income</label>
+              <select id="s-income" name="family_income" required aria-describedby="s-income-e">
+                <option value="">— Select range —</option>
+                <option>Below Tk 1,00,000</option>
+                <option>Tk 1,00,000 – 2,50,000</option>
+                <option>Tk 2,50,001 – 4,00,000</option>
+                <option>Tk 4,00,001 – 6,00,000</option>
+              </select>
+              <p class="error" id="s-income-e" role="alert" hidden></p>
+            </div>
+            <div class="field">
+              <label for="s-members" class="req">Number of family members</label>
+              <input type="number" id="s-members" name="family_members" required min="1" max="20" aria-describedby="s-members-e" />
+              <p class="error" id="s-members-e" role="alert" hidden></p>
+            </div>
+            <div class="field">
+              <label for="s-occ" class="req">Guardian's occupation</label>
+              <input type="text" id="s-occ" name="guardian_occupation" required aria-describedby="s-occ-e" />
+              <p class="error" id="s-occ-e" role="alert" hidden></p>
+            </div>
+            <div class="field">
+              <label for="s-gphone" class="req">Guardian's mobile number</label>
+              <input type="tel" id="s-gphone" name="guardian_mobile" required pattern="01[3-9][0-9]{8}" data-pattern-msg="Enter an 11-digit Bangladeshi mobile number starting with 01." aria-describedby="s-gphone-h s-gphone-e" />
+              <p class="help" id="s-gphone-h">Must be different from your own number.</p>
+              <p class="error" id="s-gphone-e" role="alert" hidden></p>
+            </div>
+          </div>
+          <fieldset class="field choice">
+            <legend class="req">Do you currently receive any other scholarship or stipend?</legend>
+            <label><input type="radio" name="other_scholarship" value="Yes" required /> Yes</label>
+            <label><input type="radio" name="other_scholarship" value="No" /> No</label>
+            <p class="error" role="alert" hidden></p>
+          </fieldset>
+          <div class="field" data-show-if="other_scholarship=Yes">
+            <label for="s-othername" class="req">Name of the other scholarship / stipend</label>
+            <input type="text" id="s-othername" name="other_scholarship_name" required aria-describedby="s-othername-e" />
+            <p class="error" id="s-othername-e" role="alert" hidden></p>
+          </div>
+          <div class="field">
+            <label for="s-why" class="req">Why do you need this scholarship?</label>
+            <textarea id="s-why" name="statement" required minlength="40" maxlength="600" aria-describedby="s-why-h s-why-e"></textarea>
+            <p class="help" id="s-why-h">2–4 sentences in English (at least 40 characters).</p>
+            <p class="error" id="s-why-e" role="alert" hidden></p>
+          </div>
+          <div class="actions"><button type="button" class="btn" data-nav="back">Back</button><div class="right"><button type="button" class="btn primary" data-nav="next">Next</button></div></div>
+        </section>
+
+        <!-- ===== Step 5 ===== -->
+        <section class="step" data-title="Documents & declaration" hidden>
+          <h2>Step 5: Documents &amp; declaration</h2>
+          <p class="lead">Upload clear copies. Check your answers below before submitting.</p>
+          <div class="form-alert" role="alert" hidden>Please correct the highlighted fields.</div>
+          <div class="grid">
+            <div class="field">
+              <label for="s-photo" class="req">Passport-size photo (JPG)</label>
+              <input type="file" id="s-photo" name="photo" accept="image/*" required aria-describedby="s-photo-e" />
+              <p class="error" id="s-photo-e" role="alert" hidden></p>
+            </div>
+            <div class="field">
+              <label for="s-marks" class="req">SSC mark sheet (PDF or JPG)</label>
+              <input type="file" id="s-marks" name="marksheet" accept="image/*,application/pdf" required aria-describedby="s-marks-e" />
+              <p class="error" id="s-marks-e" role="alert" hidden></p>
+            </div>
+          </div>
+          <fieldset class="field choice">
+            <legend>How should we contact you about the result?</legend>
+            <label><input type="checkbox" name="contact_by" value="SMS" /> SMS</label>
+            <label><input type="checkbox" name="contact_by" value="Email" /> Email</label>
+            <label><input type="checkbox" name="contact_by" value="Phone call" /> Phone call</label>
+            <p class="error" role="alert" hidden></p>
+          </fieldset>
+          <h3>Your answers</h3>
+          <div class="summary-box" data-summary></div>
+          <div class="field" style="margin-top:14px">
+            <label class="check"><input type="checkbox" name="declaration" required aria-describedby="s-decl-e" /> I declare that all information given is true. I understand false information will cancel my application.</label>
+            <p class="error" id="s-decl-e" role="alert" hidden></p>
+          </div>
+          <div class="actions"><button type="button" class="btn" data-nav="back">Back</button><div class="right"><button type="submit" class="btn submit">Submit application</button></div></div>
+        </section>
+      </form>
+    </div>
+
+    <section class="success" hidden>
+      <h2>Application submitted</h2>
+      <p>Your application has been received. Keep this reference number:</p>
+      <div class="ref"></div>
+      <div class="summary-box" data-summary></div>
+      <p><a href="index.html">Back to home</a></p>
+    </section>
+  </main>
+  <footer class="gov-foot">Shikkha Setu is a fictional portal built for the TaskBridge demo.</footer>
+
+  <script>
+    // "Server-side" rules that HTML attributes can't express.
+    window.PORTAL_RULES = [
+      {
+        step: 0,
+        check(d) {
+          if (!d.dob) return [];
+          const age = (Date.now() - new Date(d.dob).getTime()) / (365.25 * 24 * 3600 * 1000);
+          return age < 14 || age > 30 ? [{ name: 'dob', message: 'Applicants must be between 14 and 30 years old.' }] : [];
+        },
+      },
+      {
+        step: 3,
+        check(d) {
+          return d.guardian_mobile && d.guardian_mobile === d.mobile
+            ? [{ name: 'guardian_mobile', message: "Guardian's mobile number cannot be the same as your own number." }]
+            : [];
+        },
+      },
+    ];
+  </script>
+  <script src="portal.js"></script>
+</body>
+</html>

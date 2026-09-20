@@ -1,0 +1,235 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Semester Course Registration — Spring 2026</title>
+  <link rel="stylesheet" href="portal.css" />
+</head>
+<body>
+  <div class="demo-bar">Demo portal — use synthetic (made-up) information only. Nothing is sent anywhere.</div>
+  <header class="gov-head">
+    <div class="in">
+      <span class="seal"><i></i></span>
+      <div class="t"><strong>Shikkha Setu e-Service Portal</strong><span>শিক্ষা সেতু ই-সেবা পোর্টাল (Demo)</span></div>
+      <nav>
+        <a href="index.html">Home</a>
+        <a href="scholarship.html">Scholarship</a>
+        <a href="course.html" aria-current="page">Course registration</a>
+        <a href="service.html">Service request</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <h1 class="page-title">Semester Course Registration</h1>
+    <p class="page-sub">Dhaka Open University (demo) — register for your courses and pay the registration fee.</p>
+    <div class="notice" role="note">
+      Register for 2 to 5 courses. Pay the fee of Tk 3,500 by mobile banking first and keep the Transaction ID from the SMS.
+      You will also create a portal password — type it yourself.
+    </div>
+
+    <div class="layout">
+      <ol class="stepper" aria-label="Registration steps">
+        <li>Student details</li>
+        <li>Course selection</li>
+        <li>Payment &amp; account</li>
+      </ol>
+
+      <form class="wizard" novalidate data-ref-prefix="REG">
+        <!-- ===== Step 1 ===== -->
+        <section class="step" data-title="Student details">
+          <h2>Step 1: Student details</h2>
+          <p class="lead">Your student ID is printed on your ID card, e.g. 22-47811-2.</p>
+          <div class="form-alert" role="alert" hidden>Please correct the highlighted fields.</div>
+          <div class="grid">
+            <div class="field">
+              <label for="c-id" class="req">Student ID</label>
+              <input type="text" id="c-id" name="student_id" required pattern="[0-9]{2}-[0-9]{5}-[0-9]" data-pattern-msg="Student ID format is 22-12345-1." aria-describedby="c-id-h c-id-e" />
+              <p class="help" id="c-id-h">Format: 22-12345-1</p>
+              <p class="error" id="c-id-e" role="alert" hidden></p>
+            </div>
+            <div class="field">
+              <label for="c-name" class="req">Full name</label>
+              <input type="text" id="c-name" name="full_name" required pattern="[A-Za-z .\-']+" data-pattern-msg="Use English letters only." aria-describedby="c-name-e" />
+              <p class="error" id="c-name-e" role="alert" hidden></p>
+            </div>
+            <div class="field">
+              <label for="c-dept" class="req">Department</label>
+              <select id="c-dept" name="department" required aria-describedby="c-dept-e">
+                <option value="">— Select department —</option>
+                <option value="CSE">Computer Science &amp; Engineering (CSE)</option>
+                <option value="EEE">Electrical &amp; Electronic Engineering (EEE)</option>
+                <option value="BBA">Business Administration (BBA)</option>
+                <option value="ENG">English</option>
+                <option value="ECO">Economics</option>
+              </select>
+              <p class="error" id="c-dept-e" role="alert" hidden></p>
+            </div>
+            <div class="field">
+              <label for="c-sem" class="req">Semester</label>
+              <select id="c-sem" name="semester" required aria-describedby="c-sem-e">
+                <option value="">— Select semester —</option>
+                <option>Spring 2026</option><option>Summer 2026</option><option>Fall 2026</option>
+              </select>
+              <p class="error" id="c-sem-e" role="alert" hidden></p>
+            </div>
+            <fieldset class="field choice">
+              <legend class="req">Program level</legend>
+              <label><input type="radio" name="level" value="Undergraduate" required /> Undergraduate</label>
+              <label><input type="radio" name="level" value="Postgraduate" /> Postgraduate</label>
+              <p class="error" role="alert" hidden></p>
+            </fieldset>
+            <div class="field">
+              <label for="c-year" class="req">Current year of study</label>
+              <input type="number" id="c-year" name="study_year" required min="1" max="5" aria-describedby="c-year-e" />
+              <p class="error" id="c-year-e" role="alert" hidden></p>
+            </div>
+            <div class="field">
+              <label for="c-email" class="req">University or personal email</label>
+              <input type="email" id="c-email" name="email" required aria-describedby="c-email-e" />
+              <p class="error" id="c-email-e" role="alert" hidden></p>
+            </div>
+            <div class="field">
+              <label for="c-phone" class="req">Mobile number</label>
+              <input type="tel" id="c-phone" name="mobile" required pattern="01[3-9][0-9]{8}" data-pattern-msg="Enter an 11-digit Bangladeshi mobile number starting with 01." aria-describedby="c-phone-e" />
+              <p class="error" id="c-phone-e" role="alert" hidden></p>
+            </div>
+          </div>
+          <div class="actions"><span></span><div class="right"><button type="button" class="btn primary" data-nav="next">Next</button></div></div>
+        </section>
+
+        <!-- ===== Step 2 ===== -->
+        <section class="step" data-title="Course selection" hidden>
+          <h2>Step 2: Course selection</h2>
+          <p class="lead">Choose between 2 and 5 courses. Each course is 3 credits.</p>
+          <div class="form-alert" role="alert" hidden>Please correct the highlighted fields.</div>
+          <fieldset class="field choice col">
+            <legend class="req">Courses for this semester</legend>
+            <label><input type="checkbox" name="courses" value="CSE101" /> CSE101 — Introduction to Programming</label>
+            <label><input type="checkbox" name="courses" value="CSE201" /> CSE201 — Data Structures</label>
+            <label><input type="checkbox" name="courses" value="CSE305" /> CSE305 — Database Systems</label>
+            <label><input type="checkbox" name="courses" value="MAT102" /> MAT102 — Calculus II</label>
+            <label><input type="checkbox" name="courses" value="PHY101" /> PHY101 — Physics I</label>
+            <label><input type="checkbox" name="courses" value="ENG103" /> ENG103 — Academic Writing</label>
+            <label><input type="checkbox" name="courses" value="BUS110" /> BUS110 — Principles of Management</label>
+            <label><input type="checkbox" name="courses" value="ECO101" /> ECO101 — Microeconomics</label>
+            <p class="error" role="alert" hidden></p>
+          </fieldset>
+          <div class="grid">
+            <fieldset class="field choice">
+              <legend class="req">Preferred class time</legend>
+              <label><input type="radio" name="shift" value="Morning" required /> Morning (8–11 am)</label>
+              <label><input type="radio" name="shift" value="Day" /> Day (11 am–3 pm)</label>
+              <label><input type="radio" name="shift" value="Evening" /> Evening (5–8 pm)</label>
+              <p class="error" role="alert" hidden></p>
+            </fieldset>
+            <div class="field">
+              <label for="c-lab" class="req">Lab group</label>
+              <select id="c-lab" name="lab_group" required aria-describedby="c-lab-e">
+                <option value="">— Select —</option>
+                <option>Group A (Sunday)</option><option>Group B (Monday)</option><option>Group C (Wednesday)</option>
+              </select>
+              <p class="error" id="c-lab-e" role="alert" hidden></p>
+            </div>
+          </div>
+          <fieldset class="field choice">
+            <legend class="req">Are you retaking any course?</legend>
+            <label><input type="radio" name="retake" value="Yes" required /> Yes</label>
+            <label><input type="radio" name="retake" value="No" /> No</label>
+            <p class="error" role="alert" hidden></p>
+          </fieldset>
+          <div class="field" data-show-if="retake=Yes">
+            <label for="c-retake" class="req">Course code you are retaking</label>
+            <input type="text" id="c-retake" name="retake_course" required pattern="[A-Za-z]{3}[0-9]{3}" data-pattern-msg="Course code looks like CSE101." aria-describedby="c-retake-e" />
+            <p class="error" id="c-retake-e" role="alert" hidden></p>
+          </div>
+          <div class="actions"><button type="button" class="btn" data-nav="back">Back</button><div class="right"><button type="button" class="btn primary" data-nav="next">Next</button></div></div>
+        </section>
+
+        <!-- ===== Step 3 ===== -->
+        <section class="step" data-title="Payment & account" hidden>
+          <h2>Step 3: Payment &amp; account</h2>
+          <p class="lead">Enter the payment details from your mobile-banking SMS.</p>
+          <div class="form-alert" role="alert" hidden>Please correct the highlighted fields.</div>
+          <fieldset class="field choice">
+            <legend class="req">Payment method</legend>
+            <label><input type="radio" name="payment_method" value="bKash" required /> bKash</label>
+            <label><input type="radio" name="payment_method" value="Nagad" /> Nagad</label>
+            <label><input type="radio" name="payment_method" value="Rocket" /> Rocket</label>
+            <label><input type="radio" name="payment_method" value="Bank deposit" /> Bank deposit</label>
+            <p class="error" role="alert" hidden></p>
+          </fieldset>
+          <div class="grid">
+            <div class="field">
+              <label for="c-trx" class="req">Transaction ID</label>
+              <input type="text" id="c-trx" name="transaction_id" required pattern="[A-Za-z0-9]{8,12}" data-pattern-msg="Transaction ID is 8–12 letters and numbers, e.g. 8N7A6D5K3Q." aria-describedby="c-trx-h c-trx-e" />
+              <p class="help" id="c-trx-h">From the payment SMS, e.g. 8N7A6D5K3Q</p>
+              <p class="error" id="c-trx-e" role="alert" hidden></p>
+            </div>
+            <div class="field">
+              <label for="c-paidfrom" class="req">Paid from mobile number</label>
+              <input type="tel" id="c-paidfrom" name="paid_from" required pattern="01[3-9][0-9]{8}" data-pattern-msg="Enter an 11-digit Bangladeshi mobile number starting with 01." aria-describedby="c-paidfrom-e" />
+              <p class="error" id="c-paidfrom-e" role="alert" hidden></p>
+            </div>
+          </div>
+          <h3>Portal account</h3>
+          <div class="grid">
+            <div class="field">
+              <label for="c-pw" class="req">Create portal password</label>
+              <input type="password" id="c-pw" name="password" required minlength="8" autocomplete="new-password" aria-describedby="c-pw-e" />
+              <p class="error" id="c-pw-e" role="alert" hidden></p>
+            </div>
+            <div class="field">
+              <label for="c-pw2" class="req">Confirm password</label>
+              <input type="password" id="c-pw2" name="password_confirm" required minlength="8" autocomplete="new-password" aria-describedby="c-pw2-e" />
+              <p class="error" id="c-pw2-e" role="alert" hidden></p>
+            </div>
+          </div>
+          <h3>Your answers</h3>
+          <div class="summary-box" data-summary></div>
+          <div class="field" style="margin-top:14px">
+            <label class="check"><input type="checkbox" name="agree_rules" required aria-describedby="c-agree-e" /> I have read the registration rules and agree that the fee is non-refundable.</label>
+            <p class="error" id="c-agree-e" role="alert" hidden></p>
+          </div>
+          <div class="actions"><button type="button" class="btn" data-nav="back">Back</button><div class="right"><button type="submit" class="btn submit">Complete registration</button></div></div>
+        </section>
+      </form>
+    </div>
+
+    <section class="success" hidden>
+      <h2>Registration complete</h2>
+      <p>Your courses are registered. Keep this registration number:</p>
+      <div class="ref"></div>
+      <div class="summary-box" data-summary></div>
+      <p><a href="index.html">Back to home</a></p>
+    </section>
+  </main>
+  <footer class="gov-foot">Shikkha Setu is a fictional portal built for the TaskBridge demo.</footer>
+
+  <script>
+    window.PORTAL_RULES = [
+      {
+        step: 1,
+        check(d) {
+          const n = (d.courses || []).length;
+          if (n < 2) return [{ name: 'courses', message: 'Select at least 2 courses.' }];
+          if (n > 5) return [{ name: 'courses', message: 'You can take at most 5 courses this semester.' }];
+          if (d.retake === 'Yes' && d.retake_course && !(d.courses || []).includes(d.retake_course.toUpperCase()))
+            return [{ name: 'retake_course', message: 'The course you are retaking must also be selected in the course list.' }];
+          return [];
+        },
+      },
+      {
+        step: 2,
+        check() {
+          const a = document.getElementById('c-pw').value;
+          const b = document.getElementById('c-pw2').value;
+          return a && b && a !== b ? [{ name: 'password_confirm', message: 'Passwords do not match.' }] : [];
+        },
+      },
+    ];
+  </script>
+  <script src="portal.js"></script>
+</body>
+</html>

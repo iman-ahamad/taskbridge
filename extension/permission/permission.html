@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="bn">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>TaskBridge — Setup</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Anek+Bangla:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="permission.css" />
+</head>
+<body>
+  <main class="wrap">
+    <header class="head">
+      <svg viewBox="0 0 32 32" width="44" height="44" aria-hidden="true"><rect width="32" height="32" rx="9" fill="#0F5B43"/><path d="M8 20c3-7 13-7 16 0" stroke="#fff" stroke-width="2.6" fill="none" stroke-linecap="round"/><circle cx="8" cy="20" r="2.4" fill="#FFD66B"/><circle cx="24" cy="20" r="2.4" fill="#FFD66B"/></svg>
+      <div>
+        <h1>TaskBridge</h1>
+        <p class="sub">কথা বলে অনলাইন ফর্ম পূরণ করুন · Fill online forms by talking</p>
+      </div>
+    </header>
+
+    <ol class="steps">
+      <!-- Step 1: microphone -->
+      <li class="step" id="stepMic">
+        <span class="num">১</span>
+        <div class="body">
+          <h2>মাইক্রোফোন চালু করুন <small>Allow the microphone</small></h2>
+          <p>ভয়েসে উত্তর দিতে একবার অনুমতি দিন। Chrome একটি ছোট বক্স দেখাবে — <b>Allow</b> চাপুন।</p>
+          <button type="button" class="btn primary" id="btnMic">🎙 Allow microphone</button>
+          <p class="state" id="micState" role="status"></p>
+          <div class="meter" aria-hidden="true"><span id="meter"></span></div>
+        </div>
+      </li>
+
+      <!-- Step 2: free key -->
+      <li class="step" id="stepKey">
+        <span class="num">২</span>
+        <div class="body">
+          <h2>ফ্রি এআই কী যোগ করুন <small>Add a free AI key</small></h2>
+          <p>ফর্ম বোঝা ও অনুবাদের জন্য একটি ফ্রি মডেল লাগে। কোনো টাকা লাগবে না।</p>
+          <div class="seg" id="providerSeg">
+            <button type="button" data-provider="groq" aria-checked="true">Groq (recommended)</button>
+            <button type="button" data-provider="gemini" aria-checked="false">Google Gemini</button>
+          </div>
+          <p class="hint" id="keyHint"></p>
+          <div class="key-row">
+            <input type="password" id="apiKey" spellcheck="false" autocomplete="off" placeholder="Paste your key here" />
+            <button type="button" class="btn primary" id="btnSaveKey">Save &amp; test</button>
+          </div>
+          <p class="state" id="keyState" role="status"></p>
+        </div>
+      </li>
+
+      <!-- Step 3: use it -->
+      <li class="step">
+        <span class="num">৩</span>
+        <div class="body">
+          <h2>ব্যবহার শুরু করুন <small>Start using it</small></h2>
+          <ul class="tips">
+            <li>টুলবারের 🧩 আইকন থেকে TaskBridge <b>Pin</b> করে রাখুন।</li>
+            <li>যেকোনো ফর্মের পেজ খুললে ডান নিচে সবুজ <b>“কথা বলে পূরণ করুন”</b> বাটন দেখা যাবে।</li>
+            <li>বাটন চাপুন → পাশে প্যানেল খুলবে → <b>শুরু করুন</b>।</li>
+            <li>যেকোনো সময় বলতে পারেন: “আবার বলুন”, “বুঝিয়ে বলুন”, “বাদ দিন”, “মুছে দিন”, “থামুন”।</li>
+          </ul>
+          <p class="hint">Passwords, OTP, CAPTCHA and file uploads are always left for you. Nothing is submitted without your “yes”.</p>
+          <button type="button" class="btn" id="btnClose">Done — close this tab</button>
+        </div>
+      </li>
+    </ol>
+  </main>
+  <script type="module" src="permission.js"></script>
+</body>
+</html>

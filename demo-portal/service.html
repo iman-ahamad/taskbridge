@@ -1,0 +1,230 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Citizen Service Request</title>
+  <link rel="stylesheet" href="portal.css" />
+</head>
+<body>
+  <div class="demo-bar">Demo portal — use synthetic (made-up) information only. Nothing is sent anywhere.</div>
+  <header class="gov-head">
+    <div class="in">
+      <span class="seal"><i></i></span>
+      <div class="t"><strong>Shikkha Setu e-Service Portal</strong><span>শিক্ষা সেতু ই-সেবা পোর্টাল (Demo)</span></div>
+      <nav>
+        <a href="index.html">Home</a>
+        <a href="scholarship.html">Scholarship</a>
+        <a href="course.html">Course registration</a>
+        <a href="service.html" aria-current="page">Service request</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <h1 class="page-title">Citizen Service Request</h1>
+    <p class="page-sub">Request a service from your Union Digital Center or report a problem.</p>
+    <div class="notice" role="note">
+      Choose the service, pick a date for your visit, and describe what you need. You will get an SMS with your token number.
+      Keep your NID number ready.
+    </div>
+
+    <div class="layout">
+      <ol class="stepper" aria-label="Request steps">
+        <li>Service</li>
+        <li>Applicant</li>
+        <li>Details &amp; verification</li>
+      </ol>
+
+      <form class="wizard" novalidate data-ref-prefix="SR">
+        <!-- ===== Step 1 ===== -->
+        <section class="step" data-title="Service">
+          <h2>Step 1: Choose a service</h2>
+          <p class="lead">Select what you need help with.</p>
+          <div class="form-alert" role="alert" hidden>Please correct the highlighted fields.</div>
+          <div class="grid">
+            <div class="field wide">
+              <label for="r-type" class="req">Service type</label>
+              <select id="r-type" name="service_type" required aria-describedby="r-type-e">
+                <option value="">— Select a service —</option>
+                <option>Birth certificate correction</option>
+                <option>Trade license renewal</option>
+                <option>New electricity connection</option>
+                <option>Water supply complaint</option>
+                <option>Land record (khatian) copy</option>
+                <option>Other</option>
+              </select>
+              <p class="error" id="r-type-e" role="alert" hidden></p>
+            </div>
+            <div class="field wide" data-show-if="service_type=Other">
+              <label for="r-other" class="req">Describe the service you need</label>
+              <input type="text" id="r-other" name="other_service" required minlength="5" aria-describedby="r-other-e" />
+              <p class="error" id="r-other-e" role="alert" hidden></p>
+            </div>
+            <fieldset class="field choice wide">
+              <legend class="req">Urgency</legend>
+              <label><input type="radio" name="urgency" value="Normal" required /> Normal (within 15 days)</label>
+              <label><input type="radio" name="urgency" value="Urgent" /> Urgent (within 3 days, extra fee Tk 200)</label>
+              <p class="error" role="alert" hidden></p>
+            </fieldset>
+            <div class="field">
+              <label for="r-date" class="req">Preferred visit date</label>
+              <input type="date" id="r-date" name="visit_date" required aria-describedby="r-date-h r-date-e" />
+              <p class="help" id="r-date-h">Any working day from tomorrow (not Friday).</p>
+              <p class="error" id="r-date-e" role="alert" hidden></p>
+            </div>
+            <div class="field">
+              <label for="r-slot" class="req">Preferred time</label>
+              <select id="r-slot" name="visit_time" required aria-describedby="r-slot-e">
+                <option value="">— Select —</option>
+                <option>9:00 – 11:00 am</option><option>11:00 am – 1:00 pm</option><option>2:00 – 4:00 pm</option>
+              </select>
+              <p class="error" id="r-slot-e" role="alert" hidden></p>
+            </div>
+          </div>
+          <div class="actions"><span></span><div class="right"><button type="button" class="btn primary" data-nav="next">Next</button></div></div>
+        </section>
+
+        <!-- ===== Step 2 ===== -->
+        <section class="step" data-title="Applicant" hidden>
+          <h2>Step 2: Applicant details</h2>
+          <p class="lead">Information about the person making the request.</p>
+          <div class="form-alert" role="alert" hidden>Please correct the highlighted fields.</div>
+          <div class="grid">
+            <div class="field">
+              <label for="r-name" class="req">Applicant name</label>
+              <input type="text" id="r-name" name="applicant_name" required pattern="[A-Za-z .\-']+" data-pattern-msg="Use English letters only." aria-describedby="r-name-e" />
+              <p class="error" id="r-name-e" role="alert" hidden></p>
+            </div>
+            <div class="field">
+              <label for="r-nid" class="req">NID number</label>
+              <input type="text" id="r-nid" name="nid" required inputmode="numeric" pattern="[0-9]{10}|[0-9]{13}|[0-9]{17}" data-pattern-msg="NID must be 10, 13 or 17 digits." aria-describedby="r-nid-e" />
+              <p class="error" id="r-nid-e" role="alert" hidden></p>
+            </div>
+            <div class="field">
+              <label for="r-mobile" class="req">Mobile number</label>
+              <input type="tel" id="r-mobile" name="mobile" required pattern="01[3-9][0-9]{8}" data-pattern-msg="Enter an 11-digit Bangladeshi mobile number starting with 01." aria-describedby="r-mobile-e" />
+              <p class="error" id="r-mobile-e" role="alert" hidden></p>
+            </div>
+            <div class="field">
+              <label for="r-email">Email (optional)</label>
+              <input type="email" id="r-email" name="email" aria-describedby="r-email-e" />
+              <p class="error" id="r-email-e" role="alert" hidden></p>
+            </div>
+            <div class="field">
+              <label for="r-district" class="req">District</label>
+              <select id="r-district" name="district" required aria-describedby="r-district-e">
+                <option value="">— Select district —</option>
+                <option>Dhaka</option><option>Gazipur</option><option>Narayanganj</option><option>Chattogram</option>
+                <option>Cumilla</option><option>Rajshahi</option><option>Bogura</option><option>Khulna</option>
+                <option>Jashore</option><option>Sylhet</option><option>Barishal</option><option>Rangpur</option>
+                <option>Mymensingh</option><option>Tangail</option>
+              </select>
+              <p class="error" id="r-district-e" role="alert" hidden></p>
+            </div>
+            <div class="field">
+              <label for="r-union" class="req">Union / Ward</label>
+              <input type="text" id="r-union" name="union_ward" required aria-describedby="r-union-e" />
+              <p class="error" id="r-union-e" role="alert" hidden></p>
+            </div>
+            <div class="field wide">
+              <label for="r-addr" class="req">Address</label>
+              <textarea id="r-addr" name="address" required minlength="8" aria-describedby="r-addr-e"></textarea>
+              <p class="error" id="r-addr-e" role="alert" hidden></p>
+            </div>
+          </div>
+          <fieldset class="field choice">
+            <legend class="req">How should we send updates?</legend>
+            <label><input type="checkbox" name="updates_via" value="SMS" /> SMS</label>
+            <label><input type="checkbox" name="updates_via" value="Email" /> Email</label>
+            <label><input type="checkbox" name="updates_via" value="Phone call" /> Phone call</label>
+            <p class="error" role="alert" hidden></p>
+          </fieldset>
+          <div class="actions"><button type="button" class="btn" data-nav="back">Back</button><div class="right"><button type="button" class="btn primary" data-nav="next">Next</button></div></div>
+        </section>
+
+        <!-- ===== Step 3 ===== -->
+        <section class="step" data-title="Details & verification" hidden>
+          <h2>Step 3: Details &amp; verification</h2>
+          <p class="lead">Describe your problem clearly so the officer can prepare before your visit.</p>
+          <div class="form-alert" role="alert" hidden>Please correct the highlighted fields.</div>
+          <div class="field">
+            <label for="r-desc" class="req">Describe your request</label>
+            <textarea id="r-desc" name="description" required minlength="30" maxlength="800" aria-describedby="r-desc-h r-desc-e"></textarea>
+            <p class="help" id="r-desc-h">In English, at least 30 characters. Mention dates, amounts or document numbers if relevant.</p>
+            <p class="error" id="r-desc-e" role="alert" hidden></p>
+          </div>
+          <div class="grid">
+            <div class="field">
+              <label for="r-prev">Previous application / token number (if any)</label>
+              <input type="text" id="r-prev" name="previous_token" aria-describedby="r-prev-e" />
+              <p class="error" id="r-prev-e" role="alert" hidden></p>
+            </div>
+            <div class="field">
+              <label for="r-doc">Supporting document (optional)</label>
+              <input type="file" id="r-doc" name="supporting_doc" accept="image/*,application/pdf" />
+              <p class="error" role="alert" hidden></p>
+            </div>
+          </div>
+          <h3>Your answers</h3>
+          <div class="summary-box" data-summary></div>
+          <div class="field" style="margin-top:14px">
+            <label for="r-captcha" class="req">Security code (CAPTCHA)</label>
+            <div class="captcha"><canvas data-captcha width="130" height="44" aria-label="Security code image"></canvas><button type="button" data-captcha-refresh title="Get a new code" aria-label="New code">↻</button></div>
+            <input type="text" id="r-captcha" name="captcha" required autocomplete="off" aria-describedby="r-captcha-e" style="max-width:180px" />
+            <p class="error" id="r-captcha-e" role="alert" hidden></p>
+          </div>
+          <div class="field">
+            <label class="check"><input type="checkbox" name="consent" required aria-describedby="r-consent-e" /> I confirm the information is correct and agree to be contacted about this request.</label>
+            <p class="error" id="r-consent-e" role="alert" hidden></p>
+          </div>
+          <div class="actions"><button type="button" class="btn" data-nav="back">Back</button><div class="right"><button type="submit" class="btn submit">Submit request</button></div></div>
+        </section>
+      </form>
+    </div>
+
+    <section class="success" hidden>
+      <h2>Request submitted</h2>
+      <p>Your token number (also sent by SMS):</p>
+      <div class="ref"></div>
+      <div class="summary-box" data-summary></div>
+      <p><a href="index.html">Back to home</a></p>
+    </section>
+  </main>
+  <footer class="gov-foot">Shikkha Setu is a fictional portal built for the TaskBridge demo.</footer>
+
+  <script>
+    // Visit date must be tomorrow or later and not a Friday.
+    (() => {
+      const d = new Date();
+      d.setDate(d.getDate() + 1);
+      const iso = (x) => x.toISOString().slice(0, 10);
+      const el = document.getElementById('r-date');
+      el.min = iso(d);
+      const max = new Date();
+      max.setDate(max.getDate() + 60);
+      el.max = iso(max);
+    })();
+    window.PORTAL_RULES = [
+      {
+        step: 0,
+        check(d) {
+          if (!d.visit_date) return [];
+          return new Date(d.visit_date + 'T12:00:00').getDay() === 5
+            ? [{ name: 'visit_date', message: 'The center is closed on Fridays. Please choose another day.' }]
+            : [];
+        },
+      },
+      {
+        step: 1,
+        check(d) {
+          if (!(d.updates_via || []).length) return [{ name: 'updates_via', message: 'Choose at least one way to receive updates.' }];
+          if ((d.updates_via || []).includes('Email') && !d.email) return [{ name: 'email', message: 'You chose Email updates — please enter your email address.' }];
+          return [];
+        },
+      },
+    ];
+  </script>
+  <script src="portal.js"></script>
+</body>
+</html>
