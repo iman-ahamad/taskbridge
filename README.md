@@ -43,7 +43,7 @@ So people ask someone at a computer shop to fill the form for them — paying mo
 
 | Starting a form | Filling by voice | Submitted |
 |---|---|---|
-| ![Starting a form](docs/Screenshot%20start.png) | ![Filling by voice](docs/Screenshot%20Filling%20Info.png) | ![Submitted by voice](docs/Screenshot%20Submitted%20form%20by%20Voice%20Control.png) |
+| ![Starting a form](docs/Screenshot%20start.png) | ![Submitted by voice](docs/Screenshot%20Submitted%20form%20by%20Voice%20Control.png) | ![Filling by voice](docs/Screenshot%20Filling%20Info.png) | 
 
 ---
 
