@@ -45,7 +45,7 @@ So people ask someone at a computer shop to fill the form for them — paying mo
 >
 > | Asking a question | Progress checklist | Review screen |
 > |---|---|---|
-> | `docs/screenshot-ask.png` | `docs/screenshot-progress.png` | `docs/screenshot-review.png` |
+> | `docs/Screenshot start.png` | `docs/Screenshot Filling Info.png` | `docs/Screenshot Submitted form by Voice Control.png` |
 
 ---
 
