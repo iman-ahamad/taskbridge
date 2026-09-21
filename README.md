@@ -281,10 +281,13 @@ Issues and pull requests are welcome — especially Bangla wording improvements,
 
 ## 📄 License
 
-[MIT](LICENSE) © [Iman Ahamad](https://github.com/iman-ahamad)
+Copyright (c) 2026 Iman Ahamad. The original materials in this
+repository are proprietary. No copying, modification, redistribution,
+publication, sale, deployment, or derivative use is permitted without
+prior written permission.
 
-<div align="center">
-
-**Built so that nobody has to pay a stranger to fill in their own form.**
+See [COPYRIGHT.md](./COPYRIGHT.md) for the complete notice.
+Third-party dependencies and model materials remain subject to their
+own licenses.
 
 </div>
